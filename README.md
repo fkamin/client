@@ -1,5 +1,4 @@
-#Project management system --- client
-Run application with npm start./
-Open browser and type [http://localhost:3000](http://localhost:3000) to view it.\
-asdf
-asdf
+# Project management system --- client
+
+Run application in Visual Studio Code with "npm start".<br/>
+Hit the http://localhost:3000 to see running application.
