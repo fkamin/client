@@ -3,7 +3,7 @@ import axios from "axios"
 import { Link } from "react-router-dom"
 import styles from "./styles.module.css"
 
-const Login = () => {
+export function LoginPage() {
     if (localStorage.getItem("token")) window.location = "/"
 
     const [data, setData] = useState({ email: "", password: "" })
@@ -58,15 +58,14 @@ const Login = () => {
                         />
                         {error && <div
                             className={styles.error_msg}>{error}</div>}
-                        <button type="submit"
-                            className={styles.green_btn}>
+                        <button type="submit" className={styles.green_btn}>
                             Zaloguj się
                         </button>
                     </form>
                 </div>
                 <div className={styles.right}>
                     <h1>Nowy tutaj?</h1>
-                    <Link to="/signup">
+                    <Link to="/register">
                         <button type="button"
                             className={styles.white_btn}>
                             Zarejestruj się
@@ -77,5 +76,3 @@ const Login = () => {
         </div>
     )
 }
-
-export default Login;
