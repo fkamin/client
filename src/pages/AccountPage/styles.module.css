@@ -1,3 +1,68 @@
-.main_data {
-    text-align: center;
-} 
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+h2 {
+    min-width: 400px;
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3px;
+    color:rgba(100, 100, 100, 0.7)
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3px;
+    font-weight: normal;
+}
+
+.user_data {
+    background-color: rgba(230, 230, 230, 0.3);
+    border-radius: 15px;
+    min-width: 400px;
+    min-height: 400px;
+    padding: 15px;
+}
+
+.change_button, .delete_account_button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color:rgb(26, 170, 214);
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.change_button:hover {
+    color: rgb(27, 100, 122);
+    cursor: pointer;
+}
+
+.delete_account_button {
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+.delete_account_button:hover {
+    color: rgb(126, 10, 10);
+    cursor: pointer;
+}
+
+hr {
+    padding: 0;
+    margin: 0 0 12px 0; 
+}
