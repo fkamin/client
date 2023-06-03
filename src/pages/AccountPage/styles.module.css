@@ -18,7 +18,7 @@ h4 {
     padding: 0;
     margin: 0;
     margin-bottom: 3px;
-    color:rgba(100, 100, 100, 0.7)
+    color: rgba(100, 100, 100, 0.7)
 }
 
 h3 {
@@ -32,16 +32,43 @@ h3 {
     background-color: rgba(230, 230, 230, 0.3);
     border-radius: 15px;
     min-width: 400px;
-    min-height: 400px;
+    min-height: 350px;
     padding: 15px;
 }
 
-.change_button, .delete_account_button {
+.user_item {
+
+}
+
+.property_name {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+}
+
+.value_and_button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.value_and_button .change_button {
+    margin: 0
+}
+
+.change_button,
+.delete_account_button {
     padding: 0;
     margin: 0;
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    color:rgb(26, 170, 214);
+    color: rgb(26, 170, 214);
     margin-bottom: 12px;
     font-weight: bold;
 }
@@ -64,5 +91,5 @@ h3 {
 
 hr {
     padding: 0;
-    margin: 0 0 12px 0; 
+    margin: 0 0 12px 0;
 }

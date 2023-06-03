@@ -4,8 +4,10 @@ import { Link } from "react-router-dom"
 export function NavigationPage() {
     return (
         <div className={styles.main_container}>
-            <nav className={styles.navbar}>
+            <div className={styles.application_name}>
                 <h1>System zarządzania projektami</h1>
+            </div>
+            <nav className={styles.navbar}>
                 <Link to="/projects">
                     <button className={styles.white_btn}>Projekty</button>
                 </Link>

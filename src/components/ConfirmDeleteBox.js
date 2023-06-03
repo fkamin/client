@@ -5,7 +5,7 @@ const Transition = forwardRef(function Transition(props, ref) {
     return <Fade ref={ref} {...props} />
 })
 
-function ConfirmDeleteBox({ openDialog, closeDialog, deleteFunction }) {
+function ConfirmDeleteAccount({ openDialog, closeDialog, deleteFunction }) {
     return (
         <div>
             <Dialog
@@ -68,4 +68,4 @@ function ConfirmDeleteBox({ openDialog, closeDialog, deleteFunction }) {
     )
 }
 
-export default ConfirmDeleteBox
+export default ConfirmDeleteAccount
