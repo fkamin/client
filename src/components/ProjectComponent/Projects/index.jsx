@@ -45,21 +45,27 @@ export function Projects() {
     return (
         <>
             {userProjects.length > 0 && (
-                <>
-                    {userProjects.map((project) =>
-                        <Project
-                            key={project.id}
-                            title={project.title}
-                            state={project.state}
-                            description={project.description}
-                            openButtonFunction={openNewProjectDialog} />
-                    )}
-                    <NewProjectDialog
-                        openDialog={newProjectDialog}
-                        closeDialog={() => setNewProjectDialog(false)} />
-                </>
+                <div className={styles.project_structure}>
+                    <div className={styles.project_content}>
+                        <div className={styles.your_projects_text}>
+                            Twoje projekty
+                        </div>
+                        <div className={styles.projects}>
+                            {userProjects.map((project, index) =>
+                                <div key={index} className={styles.single_project}>
+                                    <Project
+                                        key={index}
+                                        title={project.title}
+                                        state={project.state}
+                                        description={project.description}
+                                        openButtonFunction={openNewProjectDialog} />
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
             )}
-            {userProjects.length === 0 && (
+            {/* {userProjects.length === 0 && (
                 <div className={styles.project_structure}>
                     <h2>Twoje projekty</h2>
                     <div className={styles.project_content}>
@@ -74,7 +80,10 @@ export function Projects() {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
+            <NewProjectDialog
+                openDialog={newProjectDialog}
+                closeDialog={() => setNewProjectDialog(false)} />
         </>
     )
 }

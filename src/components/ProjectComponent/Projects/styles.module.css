@@ -1,38 +1,25 @@
-.project_structure {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
 .project_content {
-    background-color: rgba(230, 230, 230, 0.3);
-    border-radius: 15px;
-    min-width: 600px;
-    min-height: 350px;
+    margin: auto;
+    width: 50%;
+    max-width: 500px;
 }
 
-.no_project_notification {
-    text-align: center;
-    font-size: 18px;
-    color:rgb(190, 190, 190);
+.projects {
+    background-color: rgb(59, 180, 160);
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.single_project {
+    border-radius: 7px;
     margin-bottom: 10px;
+    border: 1px solid white;
 }
 
-.button_center {
-    text-align:  center;
-}
-
-.project_content .new_project_button {
-    background-color: rgba(0, 0, 0, 0);
-    border: 0;
-    color: rgb(20, 180, 50);
-    font-size: 20px;
-}
-
-.project_content .new_project_button:hover {
-    color: rgb(20, 150, 50);
-    cursor: pointer;
+.your_projects_text {
+    font-size: 30px;
+    margin-left: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
