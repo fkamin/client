@@ -1,4 +1,4 @@
-.navbar {
+.main_container {
 	width: 100%;
 	height: 70px;
 	background-color: #3bb19b;
@@ -13,15 +13,29 @@
 	margin-left: 20px;
 }
 
+.application_name {
+	margin-left: 20px;
+	color: white;
+}
+
 .white_btn {
 	border: none;
 	outline: none;
-	padding: 12px 0;
+	padding: 5px 0;
 	background-color: white;
-	border-radius: 20px;
+	border-radius: 15px;
 	width: 120px;
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 16px;
+	margin-right: 15px;
+}
+
+.white_btn:hover {
+	background-color: rgb(220, 220, 220);
 	cursor: pointer;
-	margin-right: 20px;
+	font-size: 17px;
+}
+
+a {
+	cursor: default;
 }

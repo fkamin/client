@@ -1,6 +1,5 @@
 import { Box, Button, Dialog, DialogContent, Fade, Grid, IconButton, TextField, Typography } from "@mui/material";
 import React, { forwardRef, useState } from "react";
-import jwtDecode from "jwt-decode";
 import axios from "axios";
 
 const Transition = forwardRef(function Transition(props, ref) {
@@ -19,7 +18,7 @@ const errorStyle = {
     justifyContent: "center"
 };
 
-function NewProject({ openDialog, closeDialog }) {
+function NewProjectDialog({ openDialog, closeDialog }) {
     const [errorMessage, setErrorMessage] = useState("")
     const [projectData, setProjectData] = useState({
         title: "",
@@ -46,8 +45,41 @@ function NewProject({ openDialog, closeDialog }) {
         })
     }
 
-    const handleAddNewProject = () => {
-        console.log(projectData)
+    const handleValidateNewProject = (e) => {
+        if (projectData["title"] === "" || projectData["state"] === "") setErrorMessage("Tytył i stan nie może być pusty")
+        else {
+            setErrorMessage("")
+            handleAddNewProject(e)
+        }
+    }
+
+    const handleAddNewProject = async (e) => {
+        e.preventDefault()
+        const token = "Bearer " + localStorage.getItem("token")
+
+        if (token) {
+            try {
+                const config = {
+                    url: "http://localhost:8080/api/projects",
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    },
+                    data: JSON.stringify(projectData)
+                }
+
+                await axios(config)
+                window.location.reload()
+            } catch (error) {
+                if (error.response && error.response.status >= 400 && error.response.status <= 500) {
+                    setErrorMessage(error.response.data.message)
+                }
+                if (error.response.status) {
+                    setErrorMessage("Błąd podczas dodawania projektu")
+                }
+            }
+        }
     }
 
     return (
@@ -137,7 +169,7 @@ function NewProject({ openDialog, closeDialog }) {
                             }}>
                                 Anuluj
                             </Button>
-                            <Button size="medium" variant="contained" onClick={handleAddNewProject} sx={{
+                            <Button size="medium" variant="contained" onClick={handleValidateNewProject} sx={{
                                 backgroundColor: "rgb(200, 120, 10)",
                                 "&:hover": {
                                     backgroundColor: "rgb(180, 80, 10)"
@@ -145,7 +177,6 @@ function NewProject({ openDialog, closeDialog }) {
                             }}>
                                 Utwórz
                             </Button>
-
                         </Grid>
                     </Grid>
                 </DialogContent>
@@ -154,4 +185,4 @@ function NewProject({ openDialog, closeDialog }) {
     )
 }
 
-export default NewProject
+export default NewProjectDialog

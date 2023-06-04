@@ -1,0 +1,38 @@
+.project_structure {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.project_content {
+    background-color: rgba(230, 230, 230, 0.3);
+    border-radius: 15px;
+    min-width: 600px;
+    min-height: 350px;
+}
+
+.no_project_notification {
+    text-align: center;
+    font-size: 18px;
+    color:rgb(190, 190, 190);
+    margin-bottom: 10px;
+}
+
+.button_center {
+    text-align:  center;
+}
+
+.project_content .new_project_button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    color: rgb(20, 180, 50);
+    font-size: 20px;
+}
+
+.project_content .new_project_button:hover {
+    color: rgb(20, 150, 50);
+    cursor: pointer;
+}

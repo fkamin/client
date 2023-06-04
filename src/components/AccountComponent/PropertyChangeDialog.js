@@ -19,7 +19,7 @@ const errorStyle = {
     justifyContent: "center"
 };
 
-function ConfirmPropertyChange({ openDialog, closeDialog, propertyName, propertyId, propertyType, propertyLabel, userData }) {
+function PropertyChangeDialog({ openDialog, closeDialog, propertyName, propertyId, propertyType, propertyLabel, userData }) {
     const oldUserData = userData || []
     const [newUserData, setNewUserData] = useState(userData)
     const [errorMessage, setErrorMessage] = useState("")
@@ -151,4 +151,4 @@ function ConfirmPropertyChange({ openDialog, closeDialog, propertyName, property
     )
 }
 
-export default ConfirmPropertyChange
+export default PropertyChangeDialog

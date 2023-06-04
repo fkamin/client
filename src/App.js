@@ -1,10 +1,10 @@
 import { Routes, Route, Navigate } from "react-router-dom"
-import HomePage from "./pages/HomePage";
+import { HomePage } from "./pages/HomePage";
 import { LoginPage } from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
+import { RegisterPage } from "./pages/RegisterPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { AccountPage } from "./pages/AccountPage";
-import { ProjectPage } from "./pages/ProjectPage"
+import { ProjectsPage } from "./pages/ProjectsPage"
 import { LogoutPage } from "./pages/LogoutPage";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         {token && <Route path="/" element={<HomePage />} />}
         {token && <Route path="/account" element={<AccountPage />} />}
-        {token && <Route path="/projects" element={<ProjectPage />} />}
+        {token && <Route path="/projects" element={<ProjectsPage />} />}
         {token && <Route path="/logout" element={<LogoutPage />} />}
 
         <Route path="/" element={<Navigate replace to="/login" />} />

@@ -1,8 +1,5 @@
-import { useEffect } from "react";
+import { Logout } from "../components/AuthComponent/Logout";
 
 export function LogoutPage() {
-    useEffect(() => {
-        localStorage.removeItem("token")
-        window.location = "/login"
-    }, [])
+    return <Logout/>
 }

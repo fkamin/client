@@ -20,7 +20,7 @@ const errorStyle = {
 };
 
 
-function ConfirmPasswordChange({ openDialog, closeDialog }) {
+function PasswordChangeDialog({ openDialog, closeDialog }) {
     const [errorMessage, setErrorMessage] = useState("")
     const [userPassword, setUserPassword] = useState({
         currentPassword: "",
@@ -192,4 +192,4 @@ function ConfirmPasswordChange({ openDialog, closeDialog }) {
     )
 }
 
-export default ConfirmPasswordChange
+export default PasswordChangeDialog

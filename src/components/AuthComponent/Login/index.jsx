@@ -3,7 +3,7 @@ import axios from "axios"
 import { Link } from "react-router-dom"
 import styles from "./styles.module.css"
 
-export function LoginPage() {
+export function Login() {
     if (localStorage.getItem("token")) window.location = "/"
 
     const [data, setData] = useState({ email: "", password: "" })

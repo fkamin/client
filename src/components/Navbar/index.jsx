@@ -1,7 +1,7 @@
 import styles from "./styles.module.css"
 import { Link } from "react-router-dom"
 
-export function NavigationPage() {
+export function Navbar() {
     return (
         <div className={styles.main_container}>
             <div className={styles.application_name}>

@@ -3,7 +3,7 @@ import axios from "axios"
 import { Link, useNavigate } from "react-router-dom"
 import styles from "./styles.module.css"
 
-export function Register() {
+export default function Register() {
     const [data, setData] = useState({
         firstName: "",
         lastName: "",
@@ -126,5 +126,3 @@ export function Register() {
         </div>
     )
 }
-
-export default Register

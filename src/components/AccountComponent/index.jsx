@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react"
-import { NavigationPage } from "../NavigationPage"
 import axios from "axios"
 import jwtDecode from "jwt-decode"
 import styles from "./styles.module.css"
-import ConfirmDeleteAccount from "../../components/ConfirmDeleteBox"
-import ConfirmPropertyChange from "../../components/ConfirmPropertyChange"
-import ConfirmPasswordChange from "../../components/ConfirmPasswordChange"
+import PropertyChangeDialog from "./PropertyChangeDialog"
+import PasswordChangeDialog from "./PasswordChangeDialog"
+import DeleteAccountDialog from "./DeleteAccountDialog"
 
-export function AccountPage() {
+export function Account() {
     const baseUrl = 'http://localhost:8080/api'
     const [userData, setUserData] = useState([])
 
@@ -89,7 +88,6 @@ export function AccountPage() {
 
     return (
         <>
-            <NavigationPage />
             <div>
                 {userData && (
                     <div className={styles.content}>
@@ -139,7 +137,7 @@ export function AccountPage() {
                     </div>
                 )}
             </div>
-            {firstNameChangeDialog && (<ConfirmPropertyChange
+            {firstNameChangeDialog && (<PropertyChangeDialog
                 className={styles.delete_account_button}
                 openDialog={firstNameChangeDialog}
                 closeDialog={() => setFirstNameChangeDialog(false)}
@@ -148,7 +146,7 @@ export function AccountPage() {
                 propertyId={"firstName"}
                 propertyType={"text"}
                 userData={userData} />)}
-            {lastNameChangeDialog && (<ConfirmPropertyChange
+            {lastNameChangeDialog && (<PropertyChangeDialog
                 className={styles.delete_account_button}
                 openDialog={lastNameChangeDialog}
                 closeDialog={() => setLastNameChangeDialog(false)}
@@ -157,7 +155,7 @@ export function AccountPage() {
                 propertyId={"lastName"}
                 propertyType={"text"}
                 userData={userData} />)}
-            {emailChangeDialog && (<ConfirmPropertyChange
+            {emailChangeDialog && (<PropertyChangeDialog
                 className={styles.delete_account_button}
                 openDialog={emailChangeDialog}
                 closeDialog={() => setEmailChangeDialog(false)}
@@ -166,12 +164,12 @@ export function AccountPage() {
                 propertyId={"email"}
                 propertyType={"email"}
                 userData={userData} />)}
-            {passwordChangeDialog && (<ConfirmPasswordChange
+            {passwordChangeDialog && (<PasswordChangeDialog
                 className={styles.delete_account_button}
                 openDialog={passwordChangeDialog}
                 closeDialog={() => setPasswordChangeDialog(false)}
                 userData={userData} />)}
-            {deleteUserDialog && (<ConfirmDeleteAccount
+            {deleteUserDialog && (<DeleteAccountDialog
                 className={styles.delete_account_button}
                 openDialog={deleteUserDialog}
                 deleteFunction={handleDeleteUser}
