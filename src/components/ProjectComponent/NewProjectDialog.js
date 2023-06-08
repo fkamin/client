@@ -1,4 +1,4 @@
-import { Box, Button, Dialog, DialogContent, Fade, Grid, IconButton, TextField, Typography } from "@mui/material";
+import { Box, Button, Dialog, DialogContent, Fade, Grid, IconButton, Select, TextField, Typography, MenuItem } from "@mui/material";
 import React, { forwardRef, useState } from "react";
 import axios from "axios";
 
@@ -23,7 +23,7 @@ function NewProjectDialog({ openDialog, closeDialog }) {
     const [projectData, setProjectData] = useState({
         title: "",
         description: "",
-        state: ""
+        state: "Wybierz status"
     })
 
     const handleCloseDialog = () => {
@@ -46,7 +46,7 @@ function NewProjectDialog({ openDialog, closeDialog }) {
     }
 
     const handleValidateNewProject = (e) => {
-        if (projectData["title"] === "" || projectData["state"] === "") setErrorMessage("Tytył i stan nie może być pusty")
+        if (projectData["title"] === "" || projectData["state"] === "Wybierz status") setErrorMessage("Tytył nie może być pusty oraz status musi być wybrany")
         else {
             setErrorMessage("")
             handleAddNewProject(e)
@@ -70,7 +70,7 @@ function NewProjectDialog({ openDialog, closeDialog }) {
                 }
 
                 await axios(config)
-                window.location.reload()
+                closeDialog()
             } catch (error) {
                 if (error.response && error.response.status >= 400 && error.response.status <= 500) {
                     setErrorMessage(error.response.data.message)
@@ -148,15 +148,16 @@ function NewProjectDialog({ openDialog, closeDialog }) {
                                     variant="standard"
                                     multiline
                                 />
-                                <TextField
+                                <Select
                                     value={projectData["state"]}
-                                    onChange={handleChange}
-                                    type="text"
                                     name="state"
-                                    label="Status projektu"
-                                    fullWidth
-                                    variant="standard"
-                                />
+                                    onChange={handleChange}
+                                    variant="standard">
+                                    <MenuItem value={"Wybierz status"}>Wybierz status</MenuItem>
+                                    <MenuItem value={"Nie rozpoczęty"}>Nie rozpoczęty</MenuItem>
+                                    <MenuItem value={"W trakcie"}>W trakcie</MenuItem>
+                                </Select>
+
                                 {errorMessage && <div style={errorStyle}> {errorMessage}</div>}
                             </Box>
                         </Grid>

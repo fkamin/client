@@ -14,6 +14,8 @@ function App() {
     <>
       <Routes>
         {token && <Route path="/" element={<HomePage />} />}
+        {token && <Route path="/login" element={<Navigate replace to="/" />} />}
+        {token && <Route path="/register" element={<Navigate replace to="/" />} />}
         {token && <Route path="/account" element={<AccountPage />} />}
         {token && <Route path="/projects" element={<ProjectsPage />} />}
         {token && <Route path="/logout" element={<LogoutPage />} />}

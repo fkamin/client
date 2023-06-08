@@ -5,26 +5,74 @@
     padding: 5px;
 }
 
-.project_hr {
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    margin: 0 10px 0 10px;
-}
-
 .title_word,
 .state_word,
 .description_word {
     border-right: 1px solid rgba(255, 255, 255, 0.7);
     text-align: center;
     width: 20%;
-    color:white;
+    color: white;
     font-weight: bold;
 }
 
 .title_value,
 .state_value,
 .description_value {
+    border-right: 1px solid rgba(255, 255, 255, 0.7);
     text-align: left;
-    width: 80%;
-    color:white;
+    width: 70%;
+    color: white;
     margin-left: 15px;
+    padding-right: 15px;
+}
+
+.title_edit {
+    text-align: center;
+    width: 10%;
+    color: white;
+}
+
+.project_hr {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    margin: 0 10px 0 10px;
+}
+
+.edit_button {
+    color: rgb(40, 140, 200);
+}
+
+.delete_button,
+.cancel_button {
+    color: rgb(150, 30, 30)
+}
+
+.edit_button:hover,
+.delete_button:hover,
+.confirm_button,
+.cancel_button {
+    cursor: pointer;
+}
+
+.edit_input {
+    background-color: rgb(190, 160, 130);
+    border: 2px solid rgb(240, 240, 240);
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+    color: white;
+    padding: 5px;
+}
+
+.edit_input:focus {
+    outline: none;
+    background-color: rgb(180, 150, 120);
+}
+
+.icons {
+    text-align: center;
+    margin: auto;
+}
+
+.confirm_button {
+    color: rgb(130, 200, 20);
 }

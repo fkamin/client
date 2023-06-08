@@ -1,11 +1,11 @@
 .project_content {
     margin: auto;
     width: 50%;
-    max-width: 500px;
+    max-width: 700px;
 }
 
 .projects {
-    background-color: rgb(59, 180, 160);
+    background-color: rgb(210, 180, 140);
     border-radius: 7px;
     padding: 10px;
 }
@@ -22,4 +22,39 @@
     font-weight: bold;
     margin-top: 15px;
     margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.new_project_button {
+    font-size: 15px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 20px;
+    color: rgb(20, 170, 90);
+    font-weight: bold;
+}
+
+.new_project_button:hover {
+    cursor: pointer;
+    color: rgb(10, 110, 60);
+}
+
+.delete_project_button, 
+.delete_projects_button {
+    font-size: 15px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 20px;
+    color: rgb(241, 15, 15);
+    font-weight: bold;
+}
+
+.delete_project_button:hover, 
+.delete_projects_button:hover {
+    cursor: pointer;
+    color: rgb(102, 10, 10);
+}
+
+.no_project_notification {
+    color: rgb(190, 190, 190);
 }
