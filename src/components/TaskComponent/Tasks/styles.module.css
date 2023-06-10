@@ -1,0 +1,89 @@
+.task_list {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    background-color: rgb(190, 160, 120);
+}
+
+.new_task_button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    color: rgb(40, 200, 100);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.new_task_button:hover {
+    cursor: pointer;
+    color: rgb(20, 120, 60);
+}
+
+.edit_input {
+    border: 2px solid rgb(240, 240, 240);
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 10px;
+    min-width: 80%;
+    max-width: 80%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.edit_input:focus {
+    outline: 0;
+}
+
+.edit_input::placeholder {
+    color: rgb(170, 170, 170)
+}
+
+.info {
+    display: flex;
+}
+
+.your_tasks_text {
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    text-align: left;
+    width: 95%;
+}
+
+
+.buttons {
+    text-align: right;
+    width: 5%;
+    margin: auto;
+    margin-right: 10px;
+}
+
+.show_tasks {
+    font-size: 15px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(50, 255, 200);
+    font-weight: bold;
+}
+
+.show_tasks:hover {
+    cursor: pointer;
+    color: rgb(40, 200, 150);
+}
+
+.hide_tasks {
+    font-size: 15px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 50, 100);
+    font-weight: bold;
+}
+
+.hide_tasks:hover {
+    cursor: pointer;
+    color: rgb(140, 20, 50);
+}

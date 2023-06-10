@@ -1,6 +1,5 @@
-import { Box, Button, Dialog, DialogContent, Fade, Grid, IconButton, Select, TextField, Typography, MenuItem } from "@mui/material";
+import { Box, Button, Dialog, DialogContent, Fade, Grid, IconButton, TextField, Typography } from "@mui/material";
 import React, { forwardRef, useState } from "react";
-import axios from "axios";
 
 const Transition = forwardRef(function Transition(props, ref) {
     return <Fade ref={ref} {...props} />
@@ -18,20 +17,18 @@ const errorStyle = {
     justifyContent: "center"
 };
 
-function NewProjectDialog({ openDialog, closeDialog }) {
+function NewProjectDialog({ openDialog, closeDialog, addFunction }) {
     const [errorMessage, setErrorMessage] = useState("")
     const [projectData, setProjectData] = useState({
         title: "",
-        description: "",
-        state: "Wybierz status"
+        description: ""
     })
 
     const handleCloseDialog = () => {
         closeDialog()
         setProjectData({
             title: "",
-            description: "",
-            state: ""
+            description: ""
         })
     }
 
@@ -45,40 +42,12 @@ function NewProjectDialog({ openDialog, closeDialog }) {
         })
     }
 
-    const handleValidateNewProject = (e) => {
-        if (projectData["title"] === "" || projectData["state"] === "Wybierz status") setErrorMessage("Tytył nie może być pusty oraz status musi być wybrany")
+    const handleValidateNewProject = () => {
+        if (projectData["title"] === "") setErrorMessage("Tytył nie może być pusty")
         else {
             setErrorMessage("")
-            handleAddNewProject(e)
-        }
-    }
-
-    const handleAddNewProject = async (e) => {
-        e.preventDefault()
-        const token = "Bearer " + localStorage.getItem("token")
-
-        if (token) {
-            try {
-                const config = {
-                    url: "http://localhost:8080/api/projects",
-                    method: 'post',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': token
-                    },
-                    data: JSON.stringify(projectData)
-                }
-
-                await axios(config)
-                closeDialog()
-            } catch (error) {
-                if (error.response && error.response.status >= 400 && error.response.status <= 500) {
-                    setErrorMessage(error.response.data.message)
-                }
-                if (error.response.status) {
-                    setErrorMessage("Błąd podczas dodawania projektu")
-                }
-            }
+            const e = { preventDefault: () => {} }
+            addFunction(e, projectData)
         }
     }
 
@@ -148,16 +117,6 @@ function NewProjectDialog({ openDialog, closeDialog }) {
                                     variant="standard"
                                     multiline
                                 />
-                                <Select
-                                    value={projectData["state"]}
-                                    name="state"
-                                    onChange={handleChange}
-                                    variant="standard">
-                                    <MenuItem value={"Wybierz status"}>Wybierz status</MenuItem>
-                                    <MenuItem value={"Nie rozpoczęty"}>Nie rozpoczęty</MenuItem>
-                                    <MenuItem value={"W trakcie"}>W trakcie</MenuItem>
-                                </Select>
-
                                 {errorMessage && <div style={errorStyle}> {errorMessage}</div>}
                             </Box>
                         </Grid>

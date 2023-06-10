@@ -1,12 +1,10 @@
 .project_title,
-.project_state,
 .project_description {
     display: flex;
     padding: 5px;
 }
 
 .title_word,
-.state_word,
 .description_word {
     border-right: 1px solid rgba(255, 255, 255, 0.7);
     text-align: center;
@@ -16,7 +14,6 @@
 }
 
 .title_value,
-.state_value,
 .description_value {
     border-right: 1px solid rgba(255, 255, 255, 0.7);
     text-align: left;
@@ -24,6 +21,8 @@
     color: white;
     margin-left: 15px;
     padding-right: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .title_edit {
@@ -40,6 +39,11 @@
 .edit_button {
     color: rgb(40, 140, 200);
 }
+
+.edit_button:hover {
+    color: rgb(20, 90, 140);
+}
+
 
 .delete_button,
 .cancel_button {
@@ -61,6 +65,12 @@
     font-size: 15px;
     color: white;
     padding: 5px;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 50px;
+    resize: vertical;
+    overflow: hidden;
 }
 
 .edit_input:focus {

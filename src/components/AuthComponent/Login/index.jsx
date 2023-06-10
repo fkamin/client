@@ -37,7 +37,7 @@ export function Login() {
                 <div className={styles.left}>
                     <form className={styles.form_container}
                         onSubmit={handleSubmit}>
-                        <h1>Zaloguj się</h1>
+                        <h1>Logowanie</h1>
                         <input
                             type="email"
                             placeholder="Email"
