@@ -13,7 +13,6 @@ function DeleteAccountDialog({ openDialog, closeDialog, deleteFunction }) {
                 maxWidth="sm"
                 scroll="body"
                 onClose={closeDialog}
-                onBackdropClick={closeDialog}
                 TransitionComponent={Transition}>
                 <DialogContent sx={{ px: 6, py: 6, position: "relative"}}>
                     <IconButton

@@ -1,7 +1,7 @@
-import { useState } from "react"
-import axios from "axios"
-import { Link, useNavigate } from "react-router-dom"
-import styles from "./styles.module.css"
+import { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./styles.module.css";
 
 export default function Register() {
     const [data, setData] = useState({
@@ -9,49 +9,85 @@ export default function Register() {
         lastName: "",
         email: "",
         password: "",
-        confirmPassword: ""
-    })
+        confirmPassword: "",
+    });
 
-    const [error, setError] = useState("")
-    const navigate = useNavigate()
-    
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
+
     const handleChange = ({ currentTarget: input }) => {
-        setData({ ...data, [input.name]: input.value })
-    }
+        setData({ ...data, [input.name]: input.value });
+    };
 
     const handleValidation = (e) => {
-        if (data.password === data.confirmPassword) {
-            setError("")
-            handleSubmit(e)
-        } else {
-            setError("Hasła muszą być identyczne")
+        if (validateFields()) {
+            setError("");
+            handleSubmit(e);
         }
-    }
+    };
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         try {
-            const registerURL = "http://localhost:8080/api/register"
-            await axios.post(
-                registerURL,
-                JSON.stringify(data),
-                {
-                    headers: { "Content-Type": "application/json" },
-                    withCredentials: true
-                }
-            )
-            navigate("/login")
+            const registerURL = "http://localhost:8080/api/register";
+            await axios.post(registerURL, JSON.stringify(data), {
+                headers: { "Content-Type": "application/json" },
+                withCredentials: true,
+            });
+            navigate("/login");
         } catch (error) {
             if (
                 error.response &&
                 error.response.status >= 400 &&
                 error.response.status <= 500
             ) {
-                setError(error.response.data.message)
+                setError(error.response.data.message);
             }
         }
-    }
+    };
+
+    const validateFields = () => {
+        const firstNameAndLastNameRegex = /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]*(-[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]*)?$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!firstNameAndLastNameRegex.test(data.firstName)) {
+            setError("Niepoprawne imię");
+            return false;
+        }
+
+        if (data.firstName.length < 3) {
+            setError("Imię musi się składać z minimum 3 liter");
+            return false;
+        }
+
+        if (!firstNameAndLastNameRegex.test(data.lastName)) {
+            setError("Niepoprawne nazwisko");
+            return false;
+        }
+
+        if (data.lastName.length < 3) {
+            setError("Nazwisko musi się składać z minimum 3 liter");
+            return false;
+        }
+
+        if (!emailRegex.test(data.email)) {
+            setError("Niepoprawny adres email");
+            return false;
+        }
+
+        if (data.password.length < 8) {
+            setError("Hasło musi mieć co najmniej 8 znaków");
+            return false;
+        }
+
+        if (data.password !== data.confirmPassword) {
+            setError("Hasła muszą być identyczne");
+            return false;
+        }
+
+        return true;
+    };
 
     return (
         <div className={styles.signup_container}>
@@ -59,8 +95,7 @@ export default function Register() {
                 <div className={styles.left}>
                     <h1>Witaj ponownie</h1>
                     <Link to="/login">
-                        <button type="button"
-                            className={styles.white_btn}>
+                        <button type="button" className={styles.white_btn}>
                             Zaloguj się
                         </button>
                     </Link>
@@ -113,16 +148,17 @@ export default function Register() {
                             required
                             className={styles.input}
                         />
-                        {error && <div
-                            className={styles.error_msg}>{error}</div>}
-                        <button type="button"
+                        {error && <div className={styles.error_msg}>{error}</div>}
+                        <button
+                            type="button"
                             onClick={handleValidation}
-                            className={styles.green_btn}>
+                            className={styles.green_btn}
+                        >
                             Zarejestruj się
                         </button>
                     </form>
                 </div>
             </div>
         </div>
-    )
+    );
 }

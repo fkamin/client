@@ -52,9 +52,13 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
 
     const validateNewPassword = (e) => {
         if (!isCurrentPasswordDifferentThenNewPassword()) setErrorMessage("Nowe hasło musi być różne od obecnego")
+        if (userPassword.newPassword.length < 8) setErrorMessage("Nowe hasło musi się składać z minimum 8 znaków")
         if (!isNewPasswordSameAsConfirmNewPassword()) setErrorMessage("Nowe hasło i powtórzone hasło nie są identyczne")
         if (!allPaswordsFieldsAreNotEmpty()) setErrorMessage("Wypełnij wszystkie pola")
-        if (allPaswordsFieldsAreNotEmpty() && isCurrentPasswordDifferentThenNewPassword() && isNewPasswordSameAsConfirmNewPassword()) {
+        if (allPaswordsFieldsAreNotEmpty() 
+            && isCurrentPasswordDifferentThenNewPassword() 
+            && isNewPasswordSameAsConfirmNewPassword() 
+            && userPassword.newPassword.length >= 8) {
             handleChangeUserPassword(e)
         }
     }
