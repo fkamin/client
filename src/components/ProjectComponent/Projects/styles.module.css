@@ -5,7 +5,7 @@
 }
 
 .projects {
-    background-color: rgb(210, 180, 140);
+    background-color: rgb(30, 30, 30);
     border-radius: 7px;
     padding: 10px;
     width: 100%;
@@ -24,6 +24,7 @@
     margin-top: 15px;
     margin-bottom: 10px;
     padding-right: 20px;
+    color: white;
 }
 
 .new_project_button {
@@ -32,7 +33,6 @@
     background-color: rgba(0, 0, 0, 0);
     margin-left: 20px;
     color: rgb(20, 170, 90);
-    font-weight: bold;
 }
 
 .new_project_button:hover {
@@ -46,14 +46,13 @@
     border: 0;
     background-color: rgba(0, 0, 0, 0);
     margin-left: 10px;
-    color: rgb(241, 15, 15);
-    font-weight: bold;
+    color: rgb(240, 20, 20);
 }
 
 .delete_project_button:hover,
 .delete_projects_button:hover {
     cursor: pointer;
-    color: rgb(102, 10, 10);
+    color: rgb(150, 20, 20);
 }
 
 .no_project_notification {
@@ -69,7 +68,7 @@
 }
 
 .project_title {
-    color: rgb(100, 50, 0);
+    color: rgb(200, 200, 200);
     font-size: 18px;
     width: 95%;
     text-align: left;
@@ -79,7 +78,7 @@
 }
 
 .show_project {
-    color: rgb(50, 255, 200);
+    color: rgba(50, 255, 200, 0.5);
     text-align: center;
     margin: auto;
     width: 5%;
@@ -87,27 +86,27 @@
 
 .show_project:hover {
     cursor: pointer;
-    color: rgb(40, 200, 150);
+    color: rgb(40, 200, 150, 0.5);
 }
 
 .hide_project {
-    color: rgb(255, 50, 100);
+    color: rgba(255, 50, 100, 0.5);
     margin-left: 10px;
 }
 
 .hide_project:hover {
     cursor: pointer;
-    color: rgb(140, 20, 50);
+    color: rgb(140, 20, 50, 0.5);
 }
 
 .delete_project {
     background-color: rgba(0, 0, 0, 0);
-    color: rgb(241, 15, 15);
+    color: rgba(240, 20, 20, 0.5);
 }
 
 .delete_project:hover {
     cursor: pointer;
-    color: rgb(102, 10, 10);
+    color: rgba(150, 20, 20, 0.5);
 }
 
 .visibleOff_button_div {

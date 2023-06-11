@@ -104,7 +104,13 @@ function PropertyChangeDialog({
                 scroll="body"
                 onClose={handleCloseDialog}
                 TransitionComponent={Transition}>
-                <DialogContent sx={{ px: 6, py: 6, position: "relative" }}>
+                <DialogContent 
+                    sx={{ 
+                        px: 6, 
+                        py: 6, 
+                        position: "relative",
+                        backgroundColor: "rgb(200, 200, 200)" 
+                    }}>
                     <IconButton
                         disableRipple={true}
                         size="small"

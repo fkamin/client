@@ -19,6 +19,7 @@ function DeleteAccountDialog({ openDialog, closeDialog, deleteFunction }) {
                         px: 6, 
                         py: 6, 
                         position: "relative",
+                        backgroundColor: "rgb(200, 200, 200)",
                         "@media only screen and (max-width: 300px)": {
                             minWidth: "200px",
                             width: "200px",

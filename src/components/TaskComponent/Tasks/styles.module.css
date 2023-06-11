@@ -3,7 +3,7 @@
     border-radius: 5px;
     margin: 5px;
     text-align: center;
-    background-color: rgb(190, 160, 120);
+    background-color: rgb(45, 45, 45);
 }
 
 .new_task_button {
@@ -44,7 +44,7 @@
 }
 
 .your_tasks_text {
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 22px;
     font-weight: 600;
     margin-top: 10px;
@@ -65,13 +65,13 @@
     font-size: 15px;
     border: 0;
     background-color: rgba(0, 0, 0, 0);
-    color: rgb(50, 255, 200);
+    color: rgb(50, 255, 200, 0.5);
     font-weight: bold;
 }
 
 .show_tasks:hover {
     cursor: pointer;
-    color: rgb(40, 200, 150);
+    color: rgba(30, 160, 120, 0.5);
 }
 
 .hide_tasks {

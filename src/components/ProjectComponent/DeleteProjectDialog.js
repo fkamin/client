@@ -14,7 +14,13 @@ function DeleteProjectDialog({ openDialog, closeDialog, deleteFunction, projectN
                 scroll="body"
                 onClose={closeDialog}
                 TransitionComponent={Transition}>
-                <DialogContent sx={{ px: 6, py: 6, position: "relative" }}>
+                <DialogContent 
+                    sx={{ 
+                        px: 6, 
+                        py: 6, 
+                        position: "relative",
+                        backgroundColor: "rgb(200, 200, 200)"
+                    }}>
                     <IconButton
                         disableRipple={true}
                         size="small"
@@ -44,6 +50,8 @@ function DeleteProjectDialog({ openDialog, closeDialog, deleteFunction, projectN
                                 <Typography
                                     variant="h6"
                                     sx={{
+                                        wordWrap: "break-word",
+                                        overflowWrap: "break-word",
                                         "@media only screen and (max-width: 400px)": {
                                             fontSize: "14px"
                                         }

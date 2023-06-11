@@ -12,13 +12,14 @@ h2 {
     margin-left: 40px;
     margin-top: 15px;
     margin-bottom: 5px;
+    color: white;
 }
 
 h4 {
     padding: 0;
     margin: 0;
     margin-bottom: 3px;
-    color: rgba(100, 100, 100, 0.7)
+    color: rgb(210, 210, 210)
 }
 
 h3 {
@@ -26,10 +27,11 @@ h3 {
     margin: 0;
     margin-bottom: 3px;
     font-weight: normal;
+    color: rgb(255, 255, 255);
 }
 
 .user_data {
-    background-color: rgba(230, 230, 230, 0.3);
+    background-color: rgba(190, 190, 190, 0.3);
     border-radius: 15px;
     min-width: 400px;
     min-height: 350px;
@@ -70,18 +72,18 @@ h3 {
 }
 
 .change_button:hover {
-    color: rgb(27, 100, 122);
+    color: rgb(33, 128, 156);
     cursor: pointer;
 }
 
 .delete_account_button {
-    color: red;
+    color: rgb(90, 20, 20);
     margin: 0;
     padding: 0;
 }
 
 .delete_account_button:hover {
-    color: rgb(126, 10, 10);
+    color: rgb(130, 20, 20);
     cursor: pointer;
 }
 
