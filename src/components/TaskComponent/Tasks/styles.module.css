@@ -56,10 +56,9 @@
 
 
 .buttons {
-    text-align: right;
+    text-align: center;
     width: 5%;
-    margin: auto;
-    margin-right: 10px;
+    margin: auto
 }
 
 .show_tasks {
@@ -86,4 +85,64 @@
 .hide_tasks:hover {
     cursor: pointer;
     color: rgb(140, 20, 50);
+}
+
+@media only screen and (max-width: 1200px) {
+    .your_tasks_text {
+        width: 90%;
+    }
+    .buttons {
+        width: 10%;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .your_tasks_text {
+        font-size: 16px;
+        width: 85%;
+        margin-left: 5px;
+    }
+
+    .buttons {
+        width: 15%;
+    }
+
+    .buttons .show_tasks, .buttons .hide_tasks {
+        font-size: 16px;
+    }
+
+    .edit_input {
+        font-size: 12px;
+    }
+}
+
+
+@media only screen and (max-width: 440px) {
+    .your_tasks_text {
+        margin-left: 2px;
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .buttons {
+        width: 20%;
+    }
+
+    .new_task_button {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .your_tasks_text {
+        font-size: 12px;
+    }
+
+    .edit_input {
+        font-size: 8px;
+    }
+
+    .new_task_button {
+        font-size: 12px;
+    }
 }

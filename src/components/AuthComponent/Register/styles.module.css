@@ -96,3 +96,25 @@
 	color: white;
 	margin: 10px;
 }
+
+@media only screen and (max-width: 900px) {
+	.signup_form_container {
+		width: 500px;
+	}
+	
+	.form_container h1 {
+		font-size: 20px;
+	}
+
+	.left h1 {
+		font-size: 20px;
+	}
+
+	.form_container input {
+		width: 200px;
+	}
+
+	.left button {
+		width: 100px;
+	}
+}

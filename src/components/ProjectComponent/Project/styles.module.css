@@ -86,3 +86,37 @@
 .confirm_button {
     color: rgb(130, 200, 20);
 }
+
+@media only screen and (max-width: 770px) {
+    .title_word, .description_word, .title_value, .description_value {
+        font-size: 12px;
+    }
+
+    .icons .edit_button, .icons .confirm_button, .icons .cancel_button {
+        font-size: 20px;
+    }
+
+    .edit_input {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .title_word, .description_word {
+        font-size: 8px;
+    }
+
+    .title_value, .description_value {
+        font-size: 10px;
+    }
+
+    .edit_input {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    .icons .edit_button, .icons .confirm_button, .icons .cancel_button {
+        font-size: 12px;
+    }
+}

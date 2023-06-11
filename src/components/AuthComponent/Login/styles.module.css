@@ -96,3 +96,25 @@
 	color: white;
 	margin: 10px;
 }
+
+@media only screen and (max-width: 900px) {
+	.login_form_container {
+		width: 500px;
+	}
+	
+	.form_container h1 {
+		font-size: 20px;
+	}
+
+	.right h1 {
+		font-size: 20px;
+	}
+
+	.form_container input {
+		width: 200px;
+	}
+
+	.right button {
+		width: 100px;
+	}
+}

@@ -55,9 +55,9 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
         if (userPassword.newPassword.length < 8) setErrorMessage("Nowe hasło musi się składać z minimum 8 znaków")
         if (!isNewPasswordSameAsConfirmNewPassword()) setErrorMessage("Nowe hasło i powtórzone hasło nie są identyczne")
         if (!allPaswordsFieldsAreNotEmpty()) setErrorMessage("Wypełnij wszystkie pola")
-        if (allPaswordsFieldsAreNotEmpty() 
-            && isCurrentPasswordDifferentThenNewPassword() 
-            && isNewPasswordSameAsConfirmNewPassword() 
+        if (allPaswordsFieldsAreNotEmpty()
+            && isCurrentPasswordDifferentThenNewPassword()
+            && isNewPasswordSameAsConfirmNewPassword()
             && userPassword.newPassword.length >= 8) {
             handleChangeUserPassword(e)
         }
@@ -117,7 +117,7 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
                             top: "1rem",
                             "&:hover": {
                                 color: "rgb(100, 100, 100)"
-                            }
+                            },
                         }}>
                         X
                     </IconButton>
@@ -130,10 +130,22 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
                                     justifyContent: "flex-start",
                                     flexDirection: "column"
                                 }}>
-                                <Typography variant="h6">
+                                <Typography
+                                    variant="h6"
+                                    sx={{
+                                        "@media only screen and (max-width: 300px)": {
+                                            width: "100px",
+                                            fontSize: "12px"
+                                        }
+                                    }}>
                                     Zmień hasło
                                 </Typography>
-                                <Typography variant="h6">
+                                <Typography variant="h6"
+                                    sx={{
+                                        "@media only screen and (max-width: 300px)": {
+                                            fontSize: "5px"
+                                        }
+                                    }}>
                                     <TextField
                                         autoFocus
                                         margin="dense"
@@ -144,7 +156,11 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
                                         variant="standard"
                                         value={userPassword.currentPassword}
                                         onChange={handleChange}
-                                    />
+                                        sx={{
+                                            "@media only screen and (max-width: 300px)": {
+                                                fontSize: "8px"
+                                            }
+                                        }} />
                                     <TextField
                                         autoFocus
                                         margin="dense"
@@ -155,7 +171,11 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
                                         variant="standard"
                                         value={userPassword.newPassword}
                                         onChange={handleChange}
-                                    />
+                                        sx={{
+                                            "@media only screen and (max-width: 300px)": {
+                                                fontSize: "8px"
+                                            }
+                                        }} />
                                     <TextField
                                         autoFocus
                                         margin="dense"
@@ -166,7 +186,11 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
                                         variant="standard"
                                         value={userPassword.confirmNewPassword}
                                         onChange={handleChange}
-                                    />
+                                        sx={{
+                                            "@media only screen and (max-width: 300px)": {
+                                                fontSize: "8px"
+                                            }
+                                        }} />
                                 </Typography>
                                 {errorMessage && <div style={errorStyle}> {errorMessage}</div>}
                             </Box>
@@ -176,6 +200,9 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
                                 backgroundColor: "rgb(10, 160, 230)",
                                 "&:hover": {
                                     backgroundColor: "rgb(10, 120, 170)"
+                                },
+                                "@media only screen and (max-width: 300px)": {
+                                    fontSize: "8px"
                                 }
                             }}>
                                 Anuluj
@@ -184,6 +211,8 @@ function PasswordChangeDialog({ openDialog, closeDialog }) {
                                 backgroundColor: "rgb(200, 120, 10)",
                                 "&:hover": {
                                     backgroundColor: "rgb(180, 80, 10)"
+                                }, "@media only screen and (max-width: 300px)": {
+                                    fontSize: "8px"
                                 }
                             }}>
                                 Zatwierdź

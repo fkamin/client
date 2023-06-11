@@ -103,8 +103,7 @@ function PropertyChangeDialog({
                 maxWidth="sm"
                 scroll="body"
                 onClose={handleCloseDialog}
-                TransitionComponent={Transition}
-            >
+                TransitionComponent={Transition}>
                 <DialogContent sx={{ px: 6, py: 6, position: "relative" }}>
                     <IconButton
                         disableRipple={true}
@@ -116,9 +115,8 @@ function PropertyChangeDialog({
                             top: "1rem",
                             "&:hover": {
                                 color: "rgb(100, 100, 100)",
-                            },
-                        }}
-                    >
+                            }
+                        }}>
                         X
                     </IconButton>
                     <Grid container spacing={3}>
@@ -131,7 +129,14 @@ function PropertyChangeDialog({
                                     flexDirection: "column",
                                 }}
                             >
-                                <Typography variant="h6">{`Zmień ${propertyName}`}</Typography>
+                                <Typography 
+                                    variant="h6"
+                                    sx={{
+                                        "@media only screen and (max-width: 300px)": {
+                                            width: "50px",
+                                            fontSize: "10px"
+                                        }
+                                    }}>{`Zmień ${propertyName}`}</Typography>
                                 <TextField
                                     margin="dense"
                                     id={propertyId}
@@ -142,7 +147,12 @@ function PropertyChangeDialog({
                                     fullWidth
                                     variant="standard"
                                     pattern={fieldPatterns[propertyId].source}
-                                />
+                                    sx={{
+                                        "@media only screen and (max-width: 300px)": {
+                                            width: "100px",
+                                            fontSize: "8px"
+                                        }
+                                    }}/>
                                 {errorMessage && <div style={errorStyle}>{errorMessage}</div>}
                             </Box>
                         </Grid>
@@ -160,6 +170,10 @@ function PropertyChangeDialog({
                                     "&:hover": {
                                         backgroundColor: "rgb(10, 120, 170)",
                                     },
+                                    "@media only screen and (max-width: 300px)": {
+                                        width: "50px",
+                                        fontSize: "10px"
+                                    }
                                 }}
                             >
                                 Anuluj
@@ -173,6 +187,10 @@ function PropertyChangeDialog({
                                     "&:hover": {
                                         backgroundColor: "rgb(180, 80, 10)",
                                     },
+                                    "@media only screen and (max-width: 300px)": {
+                                        width: "50px",
+                                        fontSize: "10px"
+                                    }
                                 }}
                             >
                                 Zatwierdź

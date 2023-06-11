@@ -14,18 +14,29 @@ function DeleteAccountDialog({ openDialog, closeDialog, deleteFunction }) {
                 scroll="body"
                 onClose={closeDialog}
                 TransitionComponent={Transition}>
-                <DialogContent sx={{ px: 6, py: 6, position: "relative"}}>
+                <DialogContent 
+                    sx={{ 
+                        px: 6, 
+                        py: 6, 
+                        position: "relative",
+                        "@media only screen and (max-width: 300px)": {
+                            minWidth: "200px",
+                            width: "200px",
+                            textAlign: "center"
+                        }
+                        }}>
                     <IconButton
                         disableRipple={true}
-                        size="small" 
-                        onClick={closeDialog} 
-                        sx={{ 
-                            position: "absolute", 
-                            right: "1rem", 
+                        size="small"
+                        onClick={closeDialog}
+                        sx={{
+                            position: "absolute",
+                            right: "1rem",
                             top: "1rem",
                             "&:hover": {
                                 color: "rgb(100, 100, 100)"
-                            } }}>
+                            }
+                        }}>
                         X
                     </IconButton>
                     <Grid container spacing={3}>
@@ -37,7 +48,13 @@ function DeleteAccountDialog({ openDialog, closeDialog, deleteFunction }) {
                                     justifyContent: "flex-start",
                                     flexDirection: "column"
                                 }}>
-                                <Typography variant="h5">
+                                <Typography
+                                    variant="h5"
+                                    sx={{
+                                        "@media only screen and (max-width: 300px)": {
+                                            fontSize: "16px"
+                                        }
+                                    }}>
                                     Czy na pewno chcesz usunąć konto?
                                 </Typography>
                             </Box>
@@ -47,6 +64,9 @@ function DeleteAccountDialog({ openDialog, closeDialog, deleteFunction }) {
                                 backgroundColor: "rgb(10, 160, 230)",
                                 "&:hover": {
                                     backgroundColor: "rgb(10, 120, 170)"
+                                },
+                                "@media only screen and (max-width: 300px)": {
+                                    fontSize: "10px"
                                 }
                             }}>
                                 Anuluj
@@ -55,6 +75,9 @@ function DeleteAccountDialog({ openDialog, closeDialog, deleteFunction }) {
                                 backgroundColor: "rgb(230, 40, 10)",
                                 "&:hover": {
                                     backgroundColor: "rgb(150, 40, 10)"
+                                },
+                                "@media only screen and (max-width: 300px)": {
+                                    fontSize: "10px"
                                 }
                             }}>
                                 Usuń

@@ -14,6 +14,8 @@
     width: 85%;
     text-align: left;
     margin-left: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .task_buttons {
@@ -69,4 +71,77 @@
 
 .input_edit:focus {
     outline: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .task_name {
+        font-size: 16px;
+        width: 80%;
+    }
+
+    .task_buttons {
+        width: 20%;
+    }
+
+    .task_buttons .edit_button,
+    .task_buttons .delete_button,
+    .task_buttons .confirm_edit_button {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .task_name {
+        font-size: 14px;
+        width: 70%;
+        margin-left: 10px;
+    }
+
+    .task_buttons {
+        width: 30%;
+    }
+
+    .task_buttons .edit_button,
+    .task_buttons .delete_button,
+    .task_buttons .confirm_edit_button {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    .task_name {
+        font-size: 12px;
+        width: 65%;
+        margin-left: 5px;
+    }
+
+    .task_buttons {
+        width: 35%;
+    }
+
+    .task_buttons .edit_button,
+    .task_buttons .delete_button,
+    .task_buttons .confirm_edit_button {
+        font-size: 14px;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .task_name {
+        font-size: 12px;
+        width: 60%;
+        margin-left: 5px;
+    }
+
+    .task_buttons {
+        width: 40%;
+    }
+
+    .task_buttons .edit_button,
+    .task_buttons .delete_button,
+    .task_buttons .confirm_edit_button {
+        font-size: 14px;
+        margin: 0;
+    }
 }
